@@ -198,6 +198,17 @@ Interface to [[https://www.passwordstore.org/][pass]].
 (setq ring-bell-function 'ignore)
 #+END_SRC
 
+** PDF tools
+https://github.com/politza/pdf-tools
+https://www.youtube.com/watch?v=LFO2UbzbZhA
+
+#+BEGIN_SRC emacs-lisp
+  (use-package pdf-tools
+    :ensure t
+    :config
+    (pdf-tools-install))
+#+END_SRC
+
 * Org-mode configuration
 #+STARTUP: indent
 #+STARTUP: hidestars
