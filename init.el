@@ -27,4 +27,4 @@
 
 (require 'bind-key)
 
-(org-babel-load-file (concat user-emacs-directory "config.org"))
+(org-babel-load-file (concat user-emacs-directory "README.org"))
