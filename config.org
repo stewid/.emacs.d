@@ -8,8 +8,10 @@
 #+END_SRC
 ** Mode line
 
+https://www.masteringemacs.org/article/disabling-prompts-emacs
+Replace the 'yes or no' prompt with 'y or n'.
 #+BEGIN_SRC emacs-lisp
-(fset 'yes-or-no-p 'y-or-n-p)
+  (setopt use-short-answers t)
 #+END_SRC
 ** Theme
 #+BEGIN_SRC emacs-lisp
