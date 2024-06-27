@@ -13,7 +13,7 @@
 #+END_SRC
 ** Theme
 #+BEGIN_SRC emacs-lisp
-;  (load-theme 'dichromacy)
+  (load-theme 'modus-operandi)
 #+END_SRC
 ** Delete trailing space
 
