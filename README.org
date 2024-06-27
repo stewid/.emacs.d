@@ -6,13 +6,15 @@
 (setq user-full-name "Stefan Widgren"
       user-mail-address "stefan.widgren@gmail.com")
 #+END_SRC
-** Mode line
 
-https://www.masteringemacs.org/article/disabling-prompts-emacs
-Replace the 'yes or no' prompt with 'y or n'.
+** Use short answers
+
+[[https://www.masteringemacs.org/article/disabling-prompts-emacs][Replace the '=yes or no=' prompt with '=y or n='.]]
+
 #+BEGIN_SRC emacs-lisp
   (setopt use-short-answers t)
 #+END_SRC
+
 ** Theme
 #+BEGIN_SRC emacs-lisp
   (load-theme 'modus-operandi t)
