@@ -16,9 +16,16 @@
 #+END_SRC
 
 ** Theme
+
+Use the =modus-operandi= theme, whis is a [[https://protesilaos.com/assets/images/modus/modus-operandi-code.png][light theme]]. It is
+distributed with Emacs starting with version 28.1, which makes it easy
+to use on various systems without having to install any extra
+packages.
+
 #+BEGIN_SRC emacs-lisp
   (load-theme 'modus-operandi t)
 #+END_SRC
+
 ** Delete trailing space
 
 #+BEGIN_SRC emacs-lisp
