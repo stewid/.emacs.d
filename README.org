@@ -3,8 +3,8 @@
 ** Personal Information
 
 #+BEGIN_SRC emacs-lisp
-(setq user-full-name "Stefan Widgren"
-      user-mail-address "stefan.widgren@gmail.com")
+  (setq user-full-name "Stefan Widgren"
+        user-mail-address "stefan.widgren@gmail.com")
 #+END_SRC
 
 ** Use short answers
@@ -17,9 +17,9 @@
 
 ** Theme
 
-Use the =modus-operandi= theme, a [[https://protesilaos.com/assets/images/modus/modus-operandi-code.png][light theme]]. It is distributed with
-Emacs starting with version 28.1, which makes it easy to use on
-various systems without having to install any extra packages.
+Use the [[https://protesilaos.com/assets/images/modus/modus-operandi-code.png][light theme]] =modus-operandi=. It is distributed with Emacs
+starting with version 28.1, which makes it easy to use on various
+systems without having to install any extra packages.
 
 #+BEGIN_SRC emacs-lisp
   (load-theme 'modus-operandi t)
@@ -28,7 +28,7 @@ various systems without having to install any extra packages.
 ** Delete trailing space
 
 #+BEGIN_SRC emacs-lisp
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+END_SRC
 
 ** Magit
@@ -85,79 +85,86 @@ Use C-s or C-. to move to the next file.
 
 ** Backups
 #+BEGIN_SRC emacs-lisp
-(if (file-exists-p "~/.emacs.d/backups")
-    nil
-  (make-directory "~/.emacs.d/backups"))
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+  (if (file-exists-p "~/.emacs.d/backups")
+      nil
+    (make-directory "~/.emacs.d/backups"))
+  (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(setq delete-old-versions -1)
-(setq version-control t)
-(setq vc-make-backup-files t)
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
+  (setq delete-old-versions -1)
+  (setq version-control t)
+  (setq vc-make-backup-files t)
+  (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
 #+END_SRC
 
 ** Column number
+
 #+BEGIN_SRC emacs-lisp
-;; Show column-number
-(column-number-mode 1)
+  ;; Show column-number
+  (column-number-mode 1)
 #+END_SRC
+
 ** Org mode
+
 #+BEGIN_SRC emacs-lisp
-(use-package org
-  :defer t
-  :ensure t)
+  (use-package org
+    :defer t
+    :ensure t)
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((R . t)))
-
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((R . t)))
 #+END_SRC
 
 *** Default directories
 
 #+BEGIN_SRC emacs-lisp
-(setq org-directory (expand-file-name "~/org"))
-(setq org-default-notes-file (concat org-directory "/notes.org"))
+  (setq org-directory (expand-file-name "~/org"))
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
 #+END_SRC
 
 *** Key Bindings
 
 #+BEGIN_SRC emacs-lisp
-(bind-key "C-c l" 'org-store-link)
-(bind-key "C-c c" 'org-capture)
-(bind-key "C-c a" 'org-agenda)
-(bind-key "C-c b" 'org-iswitchb)
+  (bind-key "C-c l" 'org-store-link)
+  (bind-key "C-c c" 'org-capture)
+  (bind-key "C-c a" 'org-agenda)
+  (bind-key "C-c b" 'org-iswitchb)
 #+END_SRC
 
 *** Refile
+
 #+BEGIN_SRC emacs-lisp
-(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 #+END_SRC
+
 ** Fullscreen
+
 #+BEGIN_SRC emacs-lisp
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+  (custom-set-variables
+   '(initial-frame-alist (quote ((fullscreen . maximized)))))
 #+END_SRC
 
 ** Key Bindings
+
 #+BEGIN_SRC emacs-lisp
-(bind-key "C-c s" 'shell)
-(bind-key "C-c e" 'eshell)
-(bind-key "C-c m" 'compile)
-(bind-key (kbd "<M-dead-circumflex>") 'delete-indentation)
+  (bind-key "C-c s" 'shell)
+  (bind-key "C-c e" 'eshell)
+  (bind-key "C-c m" 'compile)
+  (bind-key (kbd "<M-dead-circumflex>") 'delete-indentation)
 #+END_SRC
 
 ** C code
-#+BEGIN_SRC emacs-lisp
-(setq c-default-style "k&r"
-      c-basic-offset 4)
-(setq-default indent-tabs-mode nil)
 
-(add-hook 'c-mode-common-hook
-          (lambda()
-            (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+#+BEGIN_SRC emacs-lisp
+  (setq c-default-style "k&r"
+        c-basic-offset 4)
+  (setq-default indent-tabs-mode nil)
+
+  (add-hook 'c-mode-common-hook
+            (lambda()
+              (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
  #+END_SRC
 
 ** Password manager
@@ -193,11 +200,12 @@ Interface to [[https://www.passwordstore.org/][pass]].
 ** Boomarks
 
 #+BEGIN_SRC emacs-lisp
-(bind-key "<XF86WakeUp>" 'bookmark-jump)
+  (bind-key "<XF86WakeUp>" 'bookmark-jump)
 #+END_SRC
+
 ** Alarm
 #+BEGIN_SRC emacs-lisp
-(setq ring-bell-function 'ignore)
+  (setq ring-bell-function 'ignore)
 #+END_SRC
 
 ** PDF tools
